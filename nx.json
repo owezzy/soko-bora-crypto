@@ -27,6 +27,16 @@
     ]
   },
   "projects": {
+    "nest-api": {
+      "tags": []
+    },
+    "ng-dapp": {
+      "tags": []
+    },
+    "ng-dapp-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ng-dapp"]
+    },
     "react-dapp": {
       "tags": []
     },
