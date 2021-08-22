@@ -1,6 +1,56 @@
 {
   "version": 2,
   "projects": {
+    "express-api": {
+      "root": "apps/express-api",
+      "sourceRoot": "apps/express-api/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/express-api",
+            "main": "apps/express-api/src/main.ts",
+            "tsConfig": "apps/express-api/tsconfig.app.json",
+            "assets": ["apps/express-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/express-api/src/environments/environment.ts",
+                  "with": "apps/express-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "express-api:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/express-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/express-api"],
+          "options": {
+            "jestConfig": "apps/express-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "nest-api": {
       "root": "apps/nest-api",
       "sourceRoot": "apps/nest-api/src",
@@ -117,7 +167,10 @@
               "browserTarget": "ng-dapp:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "apps/ng-dapp/proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",

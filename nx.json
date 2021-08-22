@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "express-api": {
+      "tags": []
+    },
     "nest-api": {
       "tags": []
     },
