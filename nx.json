@@ -37,12 +37,18 @@
       "tags": [],
       "implicitDependencies": ["ng-dapp"]
     },
+    "ng-ng-material": {
+      "tags": []
+    },
     "react-dapp": {
       "tags": []
     },
     "react-dapp-e2e": {
       "tags": [],
       "implicitDependencies": ["react-dapp"]
+    },
+    "react-react-material": {
+      "tags": []
     }
   }
 }

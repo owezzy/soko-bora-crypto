@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-app/ng-material": ["libs/ng/ng-material/src/index.ts"],
+      "@react-app/react-material": ["libs/react/react-material/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

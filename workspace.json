@@ -170,6 +170,31 @@
         }
       }
     },
+    "ng-ng-material": {
+      "projectType": "library",
+      "root": "libs/ng/ng-material",
+      "sourceRoot": "libs/ng/ng-material/src",
+      "prefix": "soko-bora-crypto",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng/ng-material"],
+          "options": {
+            "jestConfig": "libs/ng/ng-material/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ng/ng-material/src/**/*.ts",
+              "libs/ng/ng-material/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "react-dapp": {
       "root": "apps/react-dapp",
       "sourceRoot": "apps/react-dapp/src",
@@ -268,6 +293,31 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/react-dapp-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "react-react-material": {
+      "projectType": "library",
+      "root": "libs/react/react-material",
+      "sourceRoot": "libs/react/react-material/src",
+      "prefix": "soko-bora-crypto",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/react/react-material"],
+          "options": {
+            "jestConfig": "libs/react/react-material/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/react/react-material/src/**/*.ts",
+              "libs/react/react-material/src/**/*.html"
+            ]
           }
         }
       }
